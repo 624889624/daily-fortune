@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日运势小助手</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0f8ff;
+            text-align: center;
+        }
+        .fortune-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: #6366f1;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <h1>✨ 今日运势小助手 ✨</h1>
+    <p>点击按钮，查看你的今日运势</p>
+    <div class="fortune-card" id="fortune">
+        <p>今日运势将显示在这里</p>
+    </div>
+    <button class="btn" onclick="getFortune()">查看今日运势</button>
+
+    <script>
+        const fortunes = [
+            "大吉：今天会遇到意想不到的好运，适合大胆尝试新事物！",
+            "中吉：工作学习顺利，人际关系和谐，适合和朋友小聚。",
+            "小吉：小事顺利，大事稳妥，保持平常心就好。",
+            "平：平平淡淡才是真，今天适合按部就班，稳步前行。",
+            "小凶：注意细节，避免冲动决策，多听他人建议。",
+            "中凶：今天可能会遇到小挫折，保持冷静，不要轻易放弃。",
+            "大凶：诸事不顺，建议今天低调行事，避免重要决策。"
+        ];
+
+        function getFortune() {
+            const randomIndex = Math.floor(Math.random() * fortunes.length);
+            const fortuneText = fortunes[randomIndex];
+            document.getElementById('fortune').innerHTML = `<p>${fortuneText}</p>`;
+        }
+    </script>
+</body>
+</html>
